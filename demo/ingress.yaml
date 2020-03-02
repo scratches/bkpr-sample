@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    kubernetes.io/tls-acme: "true"
+    nginx.ingress.kubernetes.io/auth-signin: https://auth.$(DOMAIN)/oauth2/start?rd=%2F$server_name$escaped_request_uri
+    nginx.ingress.kubernetes.io/auth-url: https://auth.$(DOMAIN)/oauth2/auth
+spec:
+  tls:
+  - hosts:
+    - $(HOST).$(DOMAIN)
+    secretName: $(HOST)-tls
+  rules:
+  - host: $(HOST).$(DOMAIN)
+    http:
+      paths:
+        - path: /
+          backend:
+            serviceName: app
+            servicePort: 80

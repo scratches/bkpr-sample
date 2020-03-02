@@ -1,0 +1,9 @@
+varReference:
+- path: spec/tls/hosts
+  kind: Ingress
+- path: spec/tls/secretName
+  kind: Ingress
+- path: spec/rules/host
+  kind: Ingress
+- path: metadata/annotations
+  kind: Ingress
