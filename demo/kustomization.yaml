@@ -3,11 +3,11 @@ kind: Kustomization
 namePrefix: demo-
 commonLabels:
   app: demo
-commonAnnotations:
-  domain: sub.dsyer.com
 resources:
 - github.com/dsyer/docker-services/layers/base
-- ingress.yaml
+- ../ingress
+patchesStrategicMerge:
+- service.yaml
 transformers:
 - github.com/dsyer/docker-services/layers/env
 - github.com/dsyer/docker-services/layers/prometheus
@@ -28,5 +28,3 @@ vars:
       name: app
     fieldref:
       fieldpath: metadata.annotations.domain
-configurations:
-  - varreference.yaml
