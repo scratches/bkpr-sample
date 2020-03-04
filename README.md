@@ -2,7 +2,7 @@ Experiment with [Bitnami Kubernetes Production Runtime](https://github.com/bitna
 
 Prerequisites: BKPR installed in the cluster, and DNS set up for your custom domain as documented in the BKPR guides.
 
-> NOTE: You have to use the external DNS registrar to create NS records for your domain into the platform where you have BKPR (e.g. Cloud DNS in GCP). This is documented in the BKPR guides but a bit sketchy. Some registrars don't allow NS records for subdomains, so check that before you choose a domain. Expect that it might take upwards of an hour to propagate the NS records - you only have to do it once per cluster, but it's a real pain.
+> NOTE: You have to use the external DNS registrar to create NS records for your domain into the platform where you have BKPR (e.g. Cloud DNS in GCP). This is documented in the BKPR guides but a bit sketchy. Some registrars don't allow NS records for subdomains, so check that before you choose a domain. Expect that it might take upwards of an hour to propagate the NS records - you only have to do it once per domain, but it's a real pain.
 
 ## Samples
 
