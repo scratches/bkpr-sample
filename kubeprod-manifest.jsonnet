@@ -10,7 +10,7 @@
 						containers_+: {
 							edns+: {
 								args_+: {
-									source: "crd",
+									sources_+: ["crd"],
 								},
 							},
 						},

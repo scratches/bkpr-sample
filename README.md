@@ -76,7 +76,7 @@ To enable this you have to add `--source=crd` to the `external-dns` command line
 						containers_+: {
 							edns+: {
 								args_+: {
-									source: "crd",
+									sources_+: ["crd"],
 								},
 							},
 						},
