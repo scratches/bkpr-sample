@@ -1,0 +1,11 @@
+apiVersion: externaldns.k8s.io/v1alpha1
+kind: DNSEndpoint
+metadata:
+  name: wildcard
+spec:
+  endpoints:
+    - dnsName: "*.sub.dsyer.com."
+      targets:
+      - "34.69.186.22"
+      recordType: A
+      recordTTL: 10

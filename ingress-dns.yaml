@@ -1,0 +1,11 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: "*.sub.dsyer.com"
+    external-dns.alpha.kubernetes.io/ttl: "10"
+spec:
+  backend:
+    serviceName: kubernetes
+    servicePort: 443
